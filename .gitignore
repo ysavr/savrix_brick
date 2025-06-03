@@ -1,0 +1,9 @@
+.mason/
+.dart_tool/
+.idea/
+.packages
+pubspec.lock
+.DS_Store
+.atom/
+.idea/*
+.vscode/*
