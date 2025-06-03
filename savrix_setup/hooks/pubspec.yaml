@@ -1,4 +1,4 @@
-name: tlab_arch_hooks
+name: savrix_setup_hooks
 
 environment:
   sdk: "3.6.0"

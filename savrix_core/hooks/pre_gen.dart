@@ -1,9 +1,9 @@
 import 'package:clock/clock.dart';
 import 'package:mason/mason.dart';
-import 'package:tlab_core_hooks/tlab_core_hooks.dart';
+import 'package:savrix_core_hooks/savrix_core_hooks.dart';
 
 Future<void> run(HookContext context) async {
-  final configuration = TlabCoreConfiguration.fromHookVars(context.vars);
+  final configuration = SavrixCoreConfiguration.fromHookVars(context.vars);
 
   context.vars = {
     /// Below are all the variables that are accessible in the templates.

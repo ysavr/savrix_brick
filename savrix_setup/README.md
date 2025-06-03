@@ -1,4 +1,4 @@
-# TLab Arch
+# Savrix Setup
 
 Brick untuk membuat management folder sesuai dengan Clean Architecture.
 

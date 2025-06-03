@@ -1,4 +1,4 @@
-# TLab Core
+# Savrix Core
 
 Brick untuk generate project template
 

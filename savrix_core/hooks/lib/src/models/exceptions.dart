@@ -1,10 +1,10 @@
-import 'package:tlab_core_hooks/tlab_core_hooks.dart';
+import 'package:savrix_core_hooks/savrix_core_hooks.dart';
 
-/// {@template tlab_core_exception}
-/// An exception thrown by the `tlab_core` hooks.
+/// {@template savrix_core_exception}
+/// An exception thrown by the `savrix_core` hooks.
 /// {@endtemplate}
 abstract class VeryGoodCoreHooksException implements Exception {
-  /// {@macro tlab_core_exception}
+  /// {@macro savrix_core_exception}
   VeryGoodCoreHooksException({
     required this.description,
     required this.help,

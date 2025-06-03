@@ -1,4 +1,4 @@
-echo "Welcome to TLab core:"
+echo "Welcome to Savrix core:"
 echo
 echo "[1] flutter pub get"
 echo "[2] build runner"

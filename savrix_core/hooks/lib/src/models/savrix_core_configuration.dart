@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:tlab_core_hooks/tlab_core_hooks.dart';
+import 'package:savrix_core_hooks/savrix_core_hooks.dart';
 
 /// The variables specified by this hook.
 ///
@@ -9,29 +9,29 @@ import 'package:tlab_core_hooks/tlab_core_hooks.dart';
 /// See also:
 ///
 /// * [brick.yaml documentation](https://docs.brickhub.dev/brick-structure#brickyaml)
-enum _tlabCoreConfigurationVariables {
-  /// {@template tlab_core_configuration_variables.project_name}
+enum _savrixCoreConfigurationVariables {
+  /// {@template savrix_core_configuration_variables.project_name}
   /// The project name.
   ///
   /// Defaults to `my_app`.
   /// {@endtemplate}
   projectName._('project_name'),
 
-  /// {@template tlab_core_configuration_variables.application_name}
+  /// {@template savrix_core_configuration_variables.application_name}
   /// The project name.
   ///
   /// Defaults to `my_app`.
   /// {@endtemplate}
   applicationName._('application_name'),
 
-  /// {@template tlab_core_configuration_variables.organization_name}
+  /// {@template savrix_core_configuration_variables.organization_name}
   /// The organization name.
   ///
   /// Defaults to `com.example`.
   /// {@endtemplate}
   organizationName._('org_name'),
 
-  /// {@template tlab_core_configuration_variables.application_id}
+  /// {@template savrix_core_configuration_variables.application_id}
   /// The application id on Android, Bundle ID on iOS and company name on
   /// Windows. If omitted value will be formed by org_name + . + project_name.
   ///
@@ -39,14 +39,14 @@ enum _tlabCoreConfigurationVariables {
   /// {@endtemplate}
   applicationId._('application_id'),
 
-  /// {@template tlab_core_configuration_variables.description}
+  /// {@template savrix_core_configuration_variables.description}
   /// A short project description.
   ///
   /// Defaults to `A Very Good App`.
   /// {@endtemplate}
   description._('description');
 
-  const _tlabCoreConfigurationVariables._(this.key);
+  const _savrixCoreConfigurationVariables._(this.key);
 
   /// The key used in the `HookContext.vars` [Map].
   ///
@@ -54,12 +54,12 @@ enum _tlabCoreConfigurationVariables {
   final String key;
 }
 
-/// {@template tlab_core_configuration}
-/// Configuration for the `tlab_core` brick.
+/// {@template savrix_core_configuration}
+/// Configuration for the `savrix_core` brick.
 /// {@endtemplate}
-class TlabCoreConfiguration extends Equatable {
-  /// {@macro tlab_core_configuration}
-  TlabCoreConfiguration({
+class SavrixCoreConfiguration extends Equatable {
+  /// {@macro savrix_core_configuration}
+  SavrixCoreConfiguration({
     String? projectName,
     String? applicationName,
     String? organizationName,
@@ -71,7 +71,7 @@ class TlabCoreConfiguration extends Equatable {
     AndroidNamespace? androidNamespace,
   })  : projectName = projectName ?? 'my_app',
         organizationName = organizationName ?? 'com.example',
-        description = description ?? 'A TLab App',
+        description = description ?? 'A Savrix App',
         applicationName = ApplicationName.fallback(
             applicationName: applicationName ?? '',
             projectName: projectName ?? 'my_app') {
@@ -103,58 +103,58 @@ class TlabCoreConfiguration extends Equatable {
         AndroidNamespace.fromApplicationId(this.androidApplicationId);
   }
 
-  /// Deserializes a [tlabCoreConfiguration] from a `Map<String, dynamic>`
+  /// Deserializes a [savrixCoreConfiguration] from a `Map<String, dynamic>`
   /// used to represent the configuration in the `HookContext.vars` map.
-  factory TlabCoreConfiguration.fromHookVars(Map<String, dynamic> vars) {
-    final projectName = vars[_tlabCoreConfigurationVariables.projectName.key];
+  factory SavrixCoreConfiguration.fromHookVars(Map<String, dynamic> vars) {
+    final projectName = vars[_savrixCoreConfigurationVariables.projectName.key];
     if (projectName is! String?) {
       throw ArgumentError.value(
         vars,
         'vars',
-        '''Expected a value for key "${_tlabCoreConfigurationVariables.projectName.key}" to be of type String?, got $projectName.''',
+        '''Expected a value for key "${_savrixCoreConfigurationVariables.projectName.key}" to be of type String?, got $projectName.''',
       );
     }
 
     final applicationName =
-        vars[_tlabCoreConfigurationVariables.applicationName.key];
+        vars[_savrixCoreConfigurationVariables.applicationName.key];
     if (applicationName is! String) {
       throw ArgumentError.value(
         vars,
         'vars',
-        '''Expected a value for key "${_tlabCoreConfigurationVariables.applicationName.key}" to be of type String?, got $applicationName.''',
+        '''Expected a value for key "${_savrixCoreConfigurationVariables.applicationName.key}" to be of type String?, got $applicationName.''',
       );
     }
 
     final organizationName =
-        vars[_tlabCoreConfigurationVariables.organizationName.key];
+        vars[_savrixCoreConfigurationVariables.organizationName.key];
     if (organizationName is! String?) {
       throw ArgumentError.value(
         vars,
         'vars',
-        '''Expected a value for key "${_tlabCoreConfigurationVariables.organizationName.key}" to be of type String?, got $organizationName.''',
+        '''Expected a value for key "${_savrixCoreConfigurationVariables.organizationName.key}" to be of type String?, got $organizationName.''',
       );
     }
 
     final applicationId =
-        vars[_tlabCoreConfigurationVariables.applicationId.key];
+        vars[_savrixCoreConfigurationVariables.applicationId.key];
     if (applicationId is! String?) {
       throw ArgumentError.value(
         vars,
         'vars',
-        '''Expected a value for key "${_tlabCoreConfigurationVariables.applicationId.key}" to be of type String?, got $applicationId.''',
+        '''Expected a value for key "${_savrixCoreConfigurationVariables.applicationId.key}" to be of type String?, got $applicationId.''',
       );
     }
 
-    final description = vars[_tlabCoreConfigurationVariables.description.key];
+    final description = vars[_savrixCoreConfigurationVariables.description.key];
     if (description is! String?) {
       throw ArgumentError.value(
         vars,
         'vars',
-        '''Expected a value for key "${_tlabCoreConfigurationVariables.description.key}" to be of type String?, got $description.''',
+        '''Expected a value for key "${_savrixCoreConfigurationVariables.description.key}" to be of type String?, got $description.''',
       );
     }
 
-    return TlabCoreConfiguration(
+    return SavrixCoreConfiguration(
       projectName: projectName,
       applicationName: applicationName.isEmpty ? "" : applicationName,
       organizationName: organizationName,
@@ -174,16 +174,16 @@ class TlabCoreConfiguration extends Equatable {
     );
   }
 
-  /// {@macro tlab_core_configuration_variables.project_name}
+  /// {@macro savrix_core_configuration_variables.project_name}
   final String projectName;
 
-  /// {@macro tlab_core_configuration_variables.application_name}
+  /// {@macro savrix_core_configuration_variables.application_name}
   final String applicationName;
 
-  /// {@macro tlab_core_configuration_variables.organization_name}
+  /// {@macro savrix_core_configuration_variables.organization_name}
   final String organizationName;
 
-  /// {@macro tlab_core_configuration_variables.description}
+  /// {@macro savrix_core_configuration_variables.description}
   final String description;
 
   /// {@macro windows_application_id}

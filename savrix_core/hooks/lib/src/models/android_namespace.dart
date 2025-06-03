@@ -1,4 +1,4 @@
-import 'package:tlab_core_hooks/tlab_core_hooks.dart';
+import 'package:savrix_core_hooks/savrix_core_hooks.dart';
 
 /// {@template android_namespace}
 /// Every Android module has a namespace, which is used as the Kotlin or Java
