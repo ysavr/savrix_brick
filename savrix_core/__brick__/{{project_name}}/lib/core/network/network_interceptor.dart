@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -9,7 +10,12 @@ import 'package:{{project_name.snakeCase()}}/core/logger/logger.dart';
 import 'package:{{project_name.snakeCase()}}/core/shared_preferences/shared_preference_service.dart';
 import 'package:{{project_name.snakeCase()}}/core/static_constants/app_constant.dart';
 
-Dio addInterceptors({required Dio dio, required SharedPreferenceService sharedPreferences}) {
+Completer<void>? _refreshTokenCompleter;
+bool _isRefreshing = false;
+int _refreshAttempts = 0;
+const int _maxRefreshAttempts = 3;
+
+Dio addInterceptors({required Dio dio, required SharedPreferenceService sharedPreferences,}) {
 
   if (FlavorConfig.isDevelop()) {
     log("Alice: interceptor develop");
@@ -25,6 +31,18 @@ Dio addInterceptors({required Dio dio, required SharedPreferenceService sharedPr
 
           //add token to request
           var token = await sharedPreferences.getString(AppConstant.prefAccessToken) ?? '';
+          /**
+           * Test JWT expiration
+              final info = JWTExpirationUtils.getTokenInfo(token);
+              Log.d('Current token: $token');
+              Log.d('Current token expires: ${info?['exp_datetime']}');
+
+              final expiredToken = JWTExpirationUtils.makeTokenExpired(token);
+              final expiredTokenInfo = JWTExpirationUtils.getTokenInfo(expiredToken);
+              Log.d('Current expired token: $expiredToken');
+              Log.d('Current expired token expires: ${expiredTokenInfo?['exp_datetime']}');
+           **/
+           
           options.headers["Authorization"] = "Bearer $token";
           //end token addition
         }
