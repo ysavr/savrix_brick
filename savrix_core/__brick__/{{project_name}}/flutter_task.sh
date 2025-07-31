@@ -29,7 +29,7 @@ case $selection in
 
     4)
     echo "build_apk_develop"
-    flutter build apk --debug --flavor develop -t lib/main_development.dart --obfuscate --split-debug-info=build/app/symbols
+    flutter build apk --debug --flavor develop -t lib/main_develop.dart --obfuscate --split-debug-info=build/app/symbols
     ;;
 
     5)

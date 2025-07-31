@@ -491,7 +491,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 324S725KK6;
 				ENABLE_BITCODE = NO;
-				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_development.dart";
+				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_develop.dart";
 				FLAVOR_APP_NAME = "[DEV] {{application_name.titleCase()}}";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -782,7 +782,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 324S725KK6;
 				ENABLE_BITCODE = NO;
-				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_development.dart";
+				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_develop.dart";
 				FLAVOR_APP_NAME = "[DEV] {{application_name.titleCase()}}";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -932,7 +932,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				ENABLE_BITCODE = NO;
-				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_development.dart";
+				FLUTTER_TARGET = "$(SRCROOT)/../lib/main_develop.dart";
 				FLAVOR_APP_NAME = "{{application_name.titleCase()}}";
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

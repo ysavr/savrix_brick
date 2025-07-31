@@ -29,30 +29,3 @@ menjalankan executable script
 ```
 bash flutter_task.sh
 ```
-
-## How to build 📦
-
-* Develop
-```
-flutter build apk --debug --flavor development -t lib/main_development.dart
-```
-
-* Stag
-```
-flutter build apk --debug --flavor staging -t lib/main_staging.dart
-```
-
-* Production
-```
-flutter build apk --release --flavor production -t lib/main_production.dart
-```
-
-* App Bundle
-```
-flutter build appbundle --release --flavor production -t lib/main_production.dart
-```
-
-* Split per Abi
-```
-flutter build apk --split-per-abi --release --flavor development -t lib/main_development.dart
-```

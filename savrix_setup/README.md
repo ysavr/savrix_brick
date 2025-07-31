@@ -51,7 +51,7 @@ flutter build apk --debug --flavor develop -t lib/main_develop.dart
 
 * Stag
 ```
-flutter build apk --debug --flavor stag -t lib/main_stag.dart
+flutter build apk --debug --flavor stag -t lib/main_staging.dart
 ```
 
 * Production

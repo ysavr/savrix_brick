@@ -46,7 +46,7 @@ android {
             applicationIdSuffix ".stag"
             manifestPlaceholders = [appName: "[STAG] {{application_name.titleCase()}}"]
         }
-        development {
+        develop {
             dimension "default"
             applicationIdSuffix ".dev"
             manifestPlaceholders = [appName: "[DEV] {{application_name.titleCase()}}"]
