@@ -1,8 +1,8 @@
 echo "Welcome to Savrix core:"
 echo
 echo "[1] flutter pub get"
-echo "[2] build runner"
-echo "[3] build runner --delete-conflicting-outputs"
+echo "[2] run build_runner build --delete-conflicting-outputs"
+echo "[3] run build_runner wathc --delete-conflicting-outputs"
 echo "[4] build release apk develop"
 echo "[5] build release apk staging"
 echo "[6] build release apk production"
@@ -19,12 +19,12 @@ case $selection in
 
     2)
     echo "build_runner"
-    dart run build_runner build
+    dart run build_runner build --delete-conflicting-outputs
     ;;
     
     3)
     echo "build_runner"
-    dart run build_runner build --delete-conflicting-outputs
+    dart run build_runner watch --delete-conflicting-outputs
     ;;
 
     4)
