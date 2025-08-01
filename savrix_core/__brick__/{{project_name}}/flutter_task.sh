@@ -2,7 +2,7 @@ echo "Welcome to Savrix core:"
 echo
 echo "[1] flutter pub get"
 echo "[2] run build_runner build --delete-conflicting-outputs"
-echo "[3] run build_runner wathc --delete-conflicting-outputs"
+echo "[3] run build_runner watch --delete-conflicting-outputs"
 echo "[4] build release apk develop"
 echo "[5] build release apk staging"
 echo "[6] build release apk production"
